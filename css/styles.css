@@ -35,6 +35,8 @@
   --box-shadow-portfolio: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 
+    --hover-overlay-cl: rgba(33, 150, 243, 0.9);
+    
   --icon-cl: #afb1b8;
   --icon-footer-elipce-cl: rgba(255, 255, 255, 0.1);
   /*  */
@@ -550,6 +552,39 @@ HEADER^^^^^^^ */
   border-right: 1px solid var(--card-border);
   border-left: 1px solid var(--card-border);
   border-bottom: 1px solid var(--card-border);
+}
+
+/* GALLERY OVERLAY */
+
+.gallery-thumb {
+  position: relative;
+  width: 370px;
+  height: 294px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hover-overlay-cl);
+
+  transform: translateY(100%);
+  transition: transform 250ms ease;
+}
+
+.gallery-overlay > p {
+  font-size: 18px;
+  line-height: calc(28 / 18);
+
+  color: var(--btn-txt-cl);
+  padding: 63px 24px;
+}
+.gallery-thumb:hover .gallery-overlay {
+  transform: translateY(0);
 }
 
 /* FOOTER */
