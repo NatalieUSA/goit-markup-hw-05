@@ -189,10 +189,11 @@ HEADER^^^^^^^ */
 
 .current {
   text-align: center;
-  justify-content: center;}
+  justify-content: center;
+}
 
 .current::after {
-  content: '';
+  content: "";
 
   position: absolute;
   display: inline-block;
@@ -210,7 +211,8 @@ HEADER^^^^^^^ */
 }
 
 .link-portfolio {
-  width: 78px;}
+  width: 78px;
+}
 
 /* HERO */
 
@@ -323,9 +325,10 @@ HEADER^^^^^^^ */
 
 .feature-item {
   width: calc((100% - 90px) / 4);
+  flex-basis: calc((100%-3 * 30px) / 4);
   /* flex-basis: calc((100 - 3 * 30) / 4);
   .feature-item {flex-basis: calc((100% - 3 * 30px) / 4);    */
-  margin-right: 30px;
+  /* margin-right: 30px; */
 }
 
 .feature-item:nth-child(4n) {
@@ -456,15 +459,12 @@ HEADER^^^^^^^ */
 .clients-list {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  /* gap: 30px; */
 }
 
-/* .clients-item {
-  flex-basis: calc((100% - 5 * 30px) / 6);
-} */
-
-/* flex-basis: calc((100% - 5 * 30px) / 6); */
-/* flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items)); */
+.clients-item {
+  flex-basis: calc((100%-5 * 30px) / 6);
+}
 
 .clients-link {
   display: flex;
@@ -519,7 +519,9 @@ HEADER^^^^^^^ */
 
   padding: 6px 22px;
 
-  transition: background-color var(--duration) var(--timing-function), box-shadow var(--duration) var(--timing-function), color var(--duration) var(--timing-function); 
+  transition: background-color var(--duration) var(--timing-function),
+    box-shadow var(--duration) var(--timing-function),
+    color var(--duration) var(--timing-function);
 }
 
 .btn.current-btn {
