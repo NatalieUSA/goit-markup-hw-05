@@ -169,12 +169,17 @@ HEADER^^^^^^^ */
 }
 
 .auth-nav .link {
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  fill: var(--main-txt-cl);
+  color: var(--main-txt-cl);
 
+  transition: color var(--duration) var(--timing-function);
+}
+
+.auth-nav .link .icon {
+  fill: currentColor;
   transition: fill var(--duration) var(--timing-function);
 }
 .auth-nav .link:hover .icon,
@@ -357,16 +362,8 @@ HEADER^^^^^^^ */
 }
 
 /* COMPETITION OVERLAY */
-.competition-overlay > p {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: calc(16 / 14);
-  text-align: center;
-  padding: 27px 0;
-  text-transform: uppercase;
-  color: var(--btn-txt-cl);
-}
-.competition-thumb {
+
+.competition-item {
   position: relative;
   width: 370px;
   height: 294px;
@@ -380,8 +377,19 @@ HEADER^^^^^^^ */
   left: 0;
   width: 100%;
   height: 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(47, 48, 58, 0.8);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
+  color: var(--btn-txt-cl);
 }
+
 /* OUR TEAM */
 .team {
   background-color: var(--secondary-bcg-cl);
@@ -606,7 +614,8 @@ HEADER^^^^^^^ */
   color: var(--btn-txt-cl);
   padding: 63px 24px;
 }
-.gallery-thumb:hover .gallery-overlay {
+.gallery-item:hover .gallery-overlay,
+.gallery-item:focus .gallery-overlay  {
   transform: translateY(0);
 }
 
@@ -713,16 +722,17 @@ HEADER^^^^^^^ */
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--duration) var(--timing-function),
+    visibility var(--duration) var(--timing-function);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-}
-.modal-icon {
-  fill: var(--modal-icon-cl);
-  position: absolute;
 }
 
 .modal {
@@ -737,6 +747,8 @@ HEADER^^^^^^^ */
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  transition: transform var(--duration) var(--timing-function);
 }
 
 .modal-btn {
@@ -756,4 +768,23 @@ HEADER^^^^^^^ */
   border-radius: 50px;
 
   cursor: pointer;
+
+  transition: border-color var(--duration) var(--timing-function);
 }
+.modal-btn:hover,
+.modal-btn:focus {
+  border-color: var(--btn-hover-cl);
+}
+
+.modal-icon {
+  fill: var(--modal-icon-cl);
+  position: absolute;
+
+  transition: fill var(--duration) var(--timing-function);
+}
+
+.modal-btn:hover .modal-icon,
+.modal-btn:focus .modal-icon {
+  fill: var(--btn-hover-cl); 
+}
+
