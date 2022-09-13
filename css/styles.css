@@ -326,11 +326,12 @@ HEADER^^^^^^^ */
 .feature-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .feature-item {
   width: calc((100% - 90px) / 4);
-  flex-basis: calc((100%-3 * 30px) / 4);
+  /* flex-basis: calc((100%- 3 * 30px) / 4); */
   /* flex-basis: calc((100 - 3 * 30) / 4);
   .feature-item {flex-basis: calc((100% - 3 * 30px) / 4);    */
   /* margin-right: 30px; */
@@ -467,12 +468,12 @@ HEADER^^^^^^^ */
 .clients-list {
   display: flex;
   justify-content: center;
-  /* gap: 30px; */
+  gap: 30px;
 }
 
-.clients-item {
+/* .clients-item {
   flex-basis: calc((100%-5 * 30px) / 6);
-}
+} */
 
 .clients-link {
   display: flex;
@@ -563,11 +564,15 @@ HEADER^^^^^^^ */
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 30px; 
 }
 
-.gallery-item {
+/* .gallery-list {
   flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
+} */
+
+.gallery-item {
+  /* flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items)); */
   cursor: pointer;
   display: block;
 
